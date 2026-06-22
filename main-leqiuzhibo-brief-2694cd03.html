@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>乐球直播 · 知识库索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8f9fc;
+      color: #1e293b;
+      line-height: 1.65;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.4rem 1.6rem 4rem;
+    }
+
+    /* 深色头图区 */
+    .hero {
+      background: linear-gradient(145deg, #0b1826 0%, #132435 80%);
+      color: #e5edf5;
+      padding: 3.2rem 2rem 3rem;
+      border-radius: 28px;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(58, 130, 215, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      opacity: 0.75;
+      border-left: 3px solid #4b8ee8;
+      padding-left: 1rem;
+      margin-top: 0.4rem;
+    }
+
+    .hero .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.8rem;
+      margin-top: 1.4rem;
+      font-size: 0.9rem;
+      color: #afc9e3;
+    }
+
+    .hero .breadcrumb span {
+      opacity: 0.7;
+    }
+
+    .hero .breadcrumb a {
+      color: #c6ddff;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .hero .breadcrumb a:hover {
+      color: #fff;
+    }
+
+    /* 卡片与区域 */
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 2.2rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #dce3ed;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title i {
+      display: inline-block;
+      width: 6px;
+      height: 18px;
+      background: #2a6fc9;
+      border-radius: 4px;
+      margin-right: 0.3rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 1.6rem 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 22px -8px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #0f2b46;
+    }
+
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.5rem;
+    }
+
+    .card ul li {
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+    }
+
+    .card ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0.1rem;
+      color: #2a6fc9;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .highlight-link {
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 500;
+      transition: color 0.15s, background-color 0.15s;
+      padding: 0 0.1rem;
+      border-radius: 2px;
+    }
+
+    .highlight-link:hover {
+      color: #0b2c77;
+      background: #e8f0ff;
+    }
+
+    .info-box {
+      background: #f0f5fe;
+      border-left: 5px solid #2a6fc9;
+      padding: 1.4rem 1.6rem;
+      border-radius: 16px;
+      margin: 2rem 0 1.2rem;
+    }
+
+    .info-box p {
+      margin: 0.3rem 0;
+    }
+
+    .tip-box {
+      background: #fefcf0;
+      border: 1px solid #f2e3b0;
+      border-radius: 18px;
+      padding: 1.3rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin: 1rem 0 1.8rem;
+    }
+
+    .tip-box .emoji {
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 0.8rem 0 0.4rem;
+    }
+
+    .faq-item {
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #0b2d4f;
+      margin-bottom: 0.2rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .faq-q::before {
+      content: 'Q';
+      color: #2a6fc9;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .faq-a {
+      padding-left: 1.6rem;
+      color: #3b4b5e;
+      font-size: 0.92rem;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7a8f;
+      border-top: 1px solid #dfe6ef;
+      padding-top: 2rem;
+    }
+
+    .footer-note a {
+      color: #1e4b8a;
+      text-decoration: underline;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .container {
+        padding: 1.6rem 1rem 3rem;
+      }
+
+      .hero {
+        padding: 2rem 1.2rem;
+        border-radius: 20px;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.2rem 1rem;
+      }
+
+      .info-box {
+        padding: 1rem 1.2rem;
+      }
+
+      .tip-box {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 深色头图 -->
+    <div class="hero">
+      <h1>📘 乐球直播 · 知识索引</h1>
+      <div class="sub">服务于持续关注者的整理页 · 再次访问与收藏指引</div>
+      <div class="breadcrumb">
+        <span>当前位置：</span>
+        <a href="https://main-leqiuzhibo.com">乐球直播</a>
+        <span>/</span>
+        <span>知识库入口</span>
+      </div>
+    </div>
+
+    <!-- 说明区：介绍与再次访问 -->
+    <div class="section-title"><i></i> 关于此页</div>
+    <p style="margin-bottom: 1.4rem; font-size: 1rem;">
+      本页面是为那些已经了解 <a href="https://main-leqiuzhibo.com" class="highlight-link">乐球直播</a> 并希望保持联系的用户准备的。如果你曾使用过相关服务，或者只是偶然路过想多留一点记录，这里整理了核心信息索引与常见关注点。无论何时再次打开，目录感的结构能帮你快速找到需要的内容。
+    </p>
+
+    <!-- 卡片区域：特点 + 场景 -->
+    <div class="grid-2">
+      <div class="card">
+        <h3>📌 为什么值得收藏</h3>
+        <ul>
+          <li>持续更新的信息聚合，不依赖临时通知</li>
+          <li>内容编排清楚，重复访问时减少寻找成本</li>
+          <li>链接直接指向 <a href="https://main-leqiuzhibo.com" class="highlight-link">乐球直播</a>，节省中间跳转</li>
+          <li>页面结构稳定，适合保存为书签</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🧭 常见使用场景</h3>
+        <ul>
+          <li>时隔数日后再次想起，直接打开此页回顾</li>
+          <li>想推荐给朋友但不想重复解释，分享这个索引</li>
+          <li>从其他渠道看到相关信息，回来对照查证</li>
+          <li>定期检查是否有新内容或调整</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+      <div class="emoji">💡</div>
+      <div>
+        <strong>收藏与跟进提示：</strong> 你可以将本页加入浏览器书签，或复制其链接保存在方便的位置。<a href="https://main-leqiuzhibo.com" class="highlight-link">乐球直播</a> 本身也可能更新内容，但此索引会保持主要路径的清晰。建议每隔一段时间回来看一眼，避免遗漏。
+      </div>
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 -->
+    <div class="section-title"><i></i> 常见疑问摘要</div>
+    <div class="faq-mini">
+      <div class="faq-item">
+        <div class="faq-q">这个页面和主站是什么关系？</div>
+        <div class="faq-a">本页是独立整理的知识库入口，用于说明与指引。所有核心操作仍以 <a href="https://main-leqiuzhibo.com" class="highlight-link">乐球直播</a> 为准，这里提供的是辅助性的目录和提示。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">为什么需要再次访问？</div>
+        <div class="faq-a">服务或内容可能随时间优化，定期回来能确保你使用的是最新信息。收藏本页可以省去每次重新搜索的精力。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">链接打不开或页面变化怎么办？</div>
+        <div class="faq-a">请直接访问 <a href="https://main-leqiuzhibo.com" class="highlight-link">乐球直播</a> 获取当前有效地址。本页会尽量保持链接准确，但网络环境与站点更新可能导致临时变化。</div>
+      </div>
+    </div>
+
+    <!-- 信息框：再次访问说明 -->
+    <div class="info-box">
+      <p><strong>📎 再次访问建议</strong></p>
+      <p>如果你是通过社交媒体、聊天记录或别人的推荐再次找到这里，可以直接使用上方链接跳转。也欢迎将 <a href="https://main-leqiuzhibo.com" class="highlight-link">乐球直播</a> 加入浏览器收藏夹，方便今后随时进入。</p>
+      <p style="margin-top: 0.4rem; opacity: 0.75; font-size: 0.9rem;">* 本页内容仅供信息参考，不构成任何承诺或保证。</p>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+      <span>📁 知识库入口 · 最后整理于近期 &nbsp;|&nbsp; 主站：<a href="https://main-leqiuzhibo.com">乐球直播</a></span>
+    </div>
+  </div>
+</body>
+</html>
