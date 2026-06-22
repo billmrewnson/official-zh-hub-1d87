@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游 · 日常查询与延伸阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 0 1.2rem 3rem;
+            -webkit-font-smoothing: antialiased;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* 深色头图 —— 简洁块，不喧哗 */
+        .hero {
+            background: #0b1a2f;
+            margin: 2.2rem 0 2.8rem;
+            padding: 3.2rem 2.4rem;
+            border-radius: 28px;
+            color: #eef2f6;
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.25);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
+        }
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #b0c7dd;
+            border-left: 3px solid #4f8bc9;
+            padding-left: 1rem;
+            margin-top: 0.4rem;
+            font-weight: 400;
+        }
+        .hero .meta-tag {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: #2d4b6e;
+            color: #d9e6f5;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 正文区 浅色 */
+        .content {
+            background: #ffffff;
+            padding: 2.6rem 2.4rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 2.4rem;
+        }
+
+        h2 {
+            font-size: 1.65rem;
+            font-weight: 550;
+            margin: 2rem 0 0.75rem;
+            color: #0b1a2f;
+            letter-spacing: -0.01em;
+        }
+        h2:first-of-type {
+            margin-top: 0.2rem;
+        }
+        p {
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #1f6eb0;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.1s;
+            font-weight: 500;
+        }
+        a:hover {
+            color: #0a447a;
+            border-bottom: 1px solid #1f6eb0;
+        }
+
+        .quote-box {
+            background: #f0f5fc;
+            border-left: 5px solid #1f6eb0;
+            padding: 1.2rem 1.6rem;
+            margin: 1.8rem 0;
+            border-radius: 0 12px 12px 0;
+            color: #1a334a;
+        }
+        .quote-box p {
+            margin: 0.3rem 0;
+        }
+        .quote-box .source {
+            font-size: 0.85rem;
+            color: #4f6b8a;
+            margin-top: 0.6rem;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0 0.8rem;
+        }
+        .feature-item {
+            background: #f8faff;
+            flex: 1 1 200px;
+            padding: 1.2rem 1rem;
+            border-radius: 16px;
+            border: 1px solid #e6edf6;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .feature-item strong {
+            color: #0b2d4b;
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+        .feature-item span {
+            font-size: 0.92rem;
+            color: #334e6e;
+        }
+
+        .faq-block {
+            margin: 2rem 0 0.6rem;
+        }
+        .faq-q {
+            font-weight: 600;
+            margin-top: 1.2rem;
+            color: #103a5a;
+        }
+        .faq-a {
+            margin-left: 0.2rem;
+            padding-left: 1rem;
+            border-left: 2px solid #d0ddee;
+            margin-bottom: 0.8rem;
+        }
+
+        .closing {
+            margin-top: 2.2rem;
+            padding: 1.4rem 0 0.2rem;
+            border-top: 1px solid #dce5f0;
+            font-size: 0.95rem;
+            color: #3e5775;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2eaf3;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0 0.8rem 2rem;
+            }
+            .hero {
+                padding: 2.2rem 1.2rem;
+                margin: 1.4rem 0 1.8rem;
+            }
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .content {
+                padding: 1.8rem 1.2rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 0.9rem;
+            }
+            .feature-item {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <header class="hero">
+        <h1>查询、对照与延伸 · 九游</h1>
+        <div class="sub">一份围绕信息检索与阅读笔记的简明索引</div>
+        <div class="meta-tag">日常参照 · 2025</div>
+    </header>
+
+    <div class="content">
+
+        <h2>从一次查询开始</h2>
+        <p>整理资料时，常需要从一个稳定的信息锚点出发。无论是核对游戏库更新、浏览用户评测趋势，还是追溯某个发行节点的背景，<a href="https://you-9game.com">九游</a>都是出现频次较高的参考来源。它的聚合页面结构偏向于快速定位，适合作为日常对照阅读的起点。</p>
+
+        <p>当手头同时打开几个标签页，一边是官方公告，一边是社区讨论，中间则需要一个能同时承载分类索引与条目详情的中转站。这种情况下，把九游当作检索基准，往往能节省不少来回切换的成本。</p>
+
+        <div class="quote-box">
+            <p>“查询本身也是一种延伸阅读——从一个词条跳转到另一个相关条目，信息网络随之展开。”</p>
+            <div class="source">—— 摘自笔记《信息流与锚点》</div>
+        </div>
+
+        <h2>对照时关注的几个维度</h2>
+        <p>实际使用中，下面三个方向最常被调取：</p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>版本与时间线</strong>
+                <span>发行日期、更新日志、停服记录，适合需要精确时间节点的场景。</span>
+            </div>
+            <div class="feature-item">
+                <strong>标签与分类</strong>
+                <span>按类型、风格、平台筛选，便于横向比较同类产品。</span>
+            </div>
+            <div class="feature-item">
+                <strong>用户评分简览</strong>
+                <span>带有评分数值的列表页，可快速了解一款作品的大众接受度。</span>
+            </div>
+        </div>
+        <p style="margin-top: 0.4rem;">这些维度在 <a href="https://you-9game.com">九游</a> 的列表页与详情页中均有不同程度的覆盖，尤其适合需要同时参考多款产品时的对比整理。</p>
+
+        <h2>延伸阅读中的提示</h2>
+        <p>单纯依赖单一索引容易形成信息茧房。建议在查询后将九游作为出发点，再结合开发者官网、应用商店说明以及第三方评测报告进行交叉验证。尤其是涉及具体版本号、活动时间、兼容性等细节时，二次核对能有效避免遗漏。</p>
+
+        <p>另一点值得留意：九游平台中的用户评论聚合了不同视角，但评论内容仅代表个人体验，可作为感受趋势参考，不宜作为唯一决策依据。</p>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-block">
+            <div class="faq-q">▍ 日常查询中最常用的入口是什么？</div>
+            <div class="faq-a">通常直接使用站内搜索框或分类导航。对于已经熟悉的条目，直接输入名称跳转更高效。可以记住 <a href="https://you-9game.com">九游</a> 首页作为默认起始标签。</div>
+
+            <div class="faq-q">▍ 如何利用延伸阅读提高检索质量？</div>
+            <div class="faq-a">先定位目标条目，记录关键字段（如发行商、上线年份），再在另外两到三个信息源中回溯相同字段，比对一致性。这一过程能有效提升信息颗粒度。</div>
+
+            <div class="faq-q">▍ 页面布局对阅读节奏有影响吗？</div>
+            <div class="faq-a">有。九游的卡片式列表和标签筛选减少了跳转层级，适合碎片化查询。若需要深度阅读，建议将详情页内容复制到本地笔记中重新组织。</div>
+        </div>
+
+        <hr>
+
+        <div class="closing">
+            <p>以上是围绕日常查询、对照与延伸阅读的简要整理。索引本身不是终点，理解信息之间的关系才是。保持一点耐心，让每一次查询都成为下一轮阅读的序言。</p>
+            <p style="margin-top: 0.6rem; font-style: italic; color: #4a6a8a;">—— 写于一次整理之后 · 索引即路标</p>
+        </div>
+
+    </div> <!-- .content -->
+
+    <div style="text-align: center; font-size: 0.8rem; color: #7c8fa8; padding: 1.2rem 0 0.8rem; border-top: 1px solid #e0e8f2;">
+        <span>基于公开信息整理 · 仅供个人参考对照</span>
+    </div>
+
+</div> <!-- .page -->
+</body>
+</html>
